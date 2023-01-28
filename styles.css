@@ -22,11 +22,10 @@ body {
   width: 500px;
   height: 500px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .grid > div {
   text-align: center;
-  padding: 20px;
   border: 1px solid black;
 }
