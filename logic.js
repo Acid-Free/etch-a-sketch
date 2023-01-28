@@ -6,7 +6,10 @@ const grid = document.querySelector(".grid");
 let canDraw = false;
 
 function listenToMouseHold() {
-  window.addEventListener("mousedown", (e) => (canDraw = true));
+  window.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    canDraw = true;
+  });
   ["dragend", "mouseup"].forEach((event) =>
     window.addEventListener(event, (e) => {
       canDraw = false;
