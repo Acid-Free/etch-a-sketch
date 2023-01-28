@@ -25,7 +25,11 @@ body {
   grid-template-columns: repeat(8, 1fr);
 }
 
-.grid > div {
-  text-align: center;
+.grid .grid-item {
   border: 1px solid black;
+  transition: all 0.6s ease;
+}
+
+.grid-item-selected {
+  background-color: black;
 }
