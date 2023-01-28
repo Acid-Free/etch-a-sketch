@@ -27,7 +27,7 @@ body {
 
 .grid .grid-item {
   border: 1px solid black;
-  transition: all 0.6s ease;
+  transition: all 0.08s ease-in-out;
 }
 
 .grid-item-selected {
