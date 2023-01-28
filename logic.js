@@ -7,8 +7,10 @@ let canDraw = false;
 
 function listenToMouseHold() {
   window.addEventListener("mousedown", (e) => {
-    e.preventDefault();
     canDraw = true;
+    e.preventDefault();
+
+    selectGridItem(e);
   });
   ["dragend", "mouseup"].forEach((event) =>
     window.addEventListener(event, (e) => {
@@ -49,7 +51,7 @@ function createGridItems() {
   for (let i = 0; i < itemCount; ++i) {
     const gridItem = document.createElement("div");
     gridItem.classList.add("grid-item");
-    ["mousemove", "mouseup"].forEach((event) =>
+    ["mousemove", "mousedown"].forEach((event) =>
       gridItem.addEventListener(event, selectGridItem)
     );
     gridItem.setAttribute("draggable", false);
