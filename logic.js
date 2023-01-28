@@ -30,8 +30,9 @@ function listenToDimensionsButton() {
     }
 
     rowInput = parseInt(rowInput);
-
     rowCount = rowInput;
+
+    dimensionsButton.textContent = `${rowInput} x ${rowInput}`;
     removeGridItems();
     createGridItems();
   });
@@ -64,7 +65,12 @@ function deselectGridItem(e) {
   e.target.classList.remove("grid-item-selected");
 }
 
-grid.setAttribute("draggable", false);
-listenToDimensionsButton();
-listenToMouseHold();
-createGridItems();
+function initialize() {
+  dimensionsButton.textContent = `${rowCount} x ${rowCount}`;
+  listenToDimensionsButton();
+  grid.setAttribute("draggable", false);
+  listenToMouseHold();
+  createGridItems();
+}
+
+initialize();
