@@ -46,7 +46,9 @@ function createGridItems() {
   for (let i = 0; i < itemCount; ++i) {
     const gridItem = document.createElement("div");
     gridItem.classList.add("grid-item");
-    gridItem.addEventListener("mousemove", selectGridItem);
+    ["mousemove", "mouseup"].forEach((event) =>
+      gridItem.addEventListener(event, selectGridItem)
+    );
     gridItem.setAttribute("draggable", false);
     grid.appendChild(gridItem);
   }
