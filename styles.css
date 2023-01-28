@@ -22,7 +22,6 @@ body {
   width: 500px;
   height: 500px;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
 }
 
 .grid .grid-item {
