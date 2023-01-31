@@ -9,8 +9,6 @@ function listenToMouseHold() {
   window.addEventListener("mousedown", (e) => {
     canDraw = true;
     e.preventDefault();
-
-    selectGridItem(e);
   });
   ["dragend", "mouseup"].forEach((event) =>
     window.addEventListener(event, (e) => {
@@ -64,7 +62,8 @@ function removeGridItems() {
 }
 
 function selectGridItem(e) {
-  if (canDraw) e.target.classList.add("grid-item-selected");
+  if (canDraw || e.type === "mousedown")
+    e.target.classList.add("grid-item-selected");
 }
 
 function deselectGridItem(e) {
